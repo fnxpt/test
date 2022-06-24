@@ -2,7 +2,7 @@ name: Synopsys Detect scan for latest code
 on:
   push:
     branches:    
-      - 'develop'
+      - 'main'
 jobs:
   security:
     runs-on: ubuntu-latest
