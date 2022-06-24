@@ -5,11 +5,11 @@ on:
       - 'develop'
 jobs:
   security:
-    runs-on: my-github-runner
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Run Synopsys Detect
-      uses: fnxpt/blackduck-action@master
+      uses: fnxpt/blackduck-action@main
       with:
           hubURL: ${{ secrets.BLACKDUCK_URL }}
           hubToken: ${{ secrets.BLACKDUCK_TOKEN }}
