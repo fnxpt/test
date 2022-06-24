@@ -1,0 +1,17 @@
+name: Synopsys Detect scan for latest code
+on:
+  push:
+    branches:    
+      - 'develop'
+jobs:
+  security:
+    runs-on: my-github-runner
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run Synopsys Detect
+      uses: fnxpt/blackduck-action@master
+      with:
+          hubURL: ${{ secrets.BLACKDUCK_URL }}
+          hubToken: ${{ secrets.BLACKDUCK_TOKEN }}
+          projectType: ios
+          projectName: test
