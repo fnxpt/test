@@ -1,10 +1,11 @@
 name: Synopsys Detect scan for released code
 on:
   push:
-    tags:
+    tags: 
+      - '*'
 jobs:
     security:
-        runs-on: my-github-runner
+        runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v2
         - name: Get the version
@@ -15,6 +16,6 @@ jobs:
           with:
             hubURL: ${{ secrets.BLACKDUCK_URL }}
             hubToken: ${{ secrets.BLACKDUCK_TOKEN }}
-            projectType: maven
-            projectName: example
+            projectType: ios
+            projectName: test-github
             version: ${{ steps.get_version.outputs.VERSION }}

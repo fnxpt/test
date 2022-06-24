@@ -14,4 +14,4 @@ jobs:
           hubURL: ${{ secrets.BLACKDUCK_URL }}
           hubToken: ${{ secrets.BLACKDUCK_TOKEN }}
           projectType: ios
-          projectName: test
+          projectName: test-github
